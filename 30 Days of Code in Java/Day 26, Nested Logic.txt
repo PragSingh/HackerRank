@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        int actualReturnDay = sc.nextInt();
+        int actualReturnMonth = sc.nextInt();
+        int actualReturnYear = sc.nextInt();
+        
+        int expectedReturnDay = sc.nextInt();
+        int expectedReturnMonth = sc.nextInt();
+        int expectedReturnYear = sc.nextInt();
+        
+        int fine;
+        
+        if(actualReturnYear > expectedReturnYear){
+            fine = 10000;
+        }else if(actualReturnMonth > expectedReturnMonth && (actualReturnYear >= expectedReturnYear)){
+            fine = 500*(actualReturnMonth - expectedReturnMonth);       
+    }else if(actualReturnDay > expectedReturnDay && (actualReturnMonth >= expectedReturnMonth) && (actualReturnYear >= expectedReturnYear)){
+            fine = 15*(actualReturnDay - expectedReturnDay);
+    }else{
+        fine = 0;
+    }
+    System.out.println(fine);
+    sc.close();
+}
+}
+
